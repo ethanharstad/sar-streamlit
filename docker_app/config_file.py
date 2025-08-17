@@ -5,7 +5,7 @@ class Config:
     
     # Put your own custom value here to prevent ALB to accept requests from
     # other clients that CloudFront. You can choose any random string.
-    CUSTOM_HEADER_VALUE = "My_random_value_58dsv15e4s31"    
+    CUSTOM_HEADER_VALUE = "2GndNf5NaDGtqnJr"    
     
     # ID of Secrets Manager containing cognito parameters
     # When you delete a secret, you cannot create another one immediately
