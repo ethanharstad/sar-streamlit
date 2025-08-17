@@ -1,17 +1,6 @@
 {
-	// Give this a name that is useful to you. This will be shown in the VS Code
-	// Maybe use your app name, your company name ... something that makes sense to you.
 	"name": "streamlit",
-
-	// The `image` specifies that we want to use a pre-built Python 3.12 container
-	// which is based on the Debian Bullseye OS.
-	// And "Bullseye" is the name of the latest version of Debian.
-	// https://www.debian.org
-	// For more options about this image, see the README at:
-	// https://github.com/devcontainers/templates/tree/main/src/python
 	"image": "ghcr.io/devcontainers/templates/python:4.1.0",
-
-	// The features are pre-installed capabilities that you can use in your development environment:
 	"features": {
 		// This is the AWS CLI allowing you to run `aws` commands in your terminal:
 		// https://aws.amazon.com/cli/
@@ -34,19 +23,12 @@
 		// your dockerized development environment:
 		// "ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
-
-	// Add environment variables for your developer environment:
 	"containerEnv": {
 		// This configures the region that you will create AWS resources in by default.
 		// It's common to pick one closer to you - I think it's unnessecary and us-east-1
 		// is the msot feature complete, the lowest cost and so is a good default.
 		"AWS_DEFAULT_REGION": "us-east-1"
-
-		// You can add more environment variables here if you need to.
-		// For example, you might want to add environment variables for your application
-		// like "FLASK_ENV": "development" or "DJANGO_SETTINGS_MODULE": "myapp.settings"
 	},
-
 	// You can add "mounts" here to mount local directories into your development environment.
 	"mounts": [
 		// This one will mount `~/.aws` into the development environment at `/home/vscode/.aws`.
@@ -56,13 +38,6 @@
 		// It's useful if you're using AWS SSO, and want to share your AWS config between all of your environments.
 		// "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws/,target=/home/vscode/.aws/,type=bind,consistency=cached"
 	],
-
-	// # The opinionated settings for the development environment.
-	// The below are the settings for the VS Code development environment,
-	// and how they will treat your code. You can delete all of this if you want to.
-	// BUt, they are sensible python defaults.
-	// You can add more settings here and should get to know them.
-	// These can be very specific to you - tabs vs spaces, line length, etc.
 	"customizations": {
 		"vscode": {
 			// Extensions are the plugins that you can install in VS Code.
@@ -71,8 +46,6 @@
 				// # Python features:
 				"ms-python.python",
 				"ms-python.vscode-pylance",
-				// Linting and formatting of your python code
-				"charliermarsh.ruff",
 				"ms-python.black-formatter",
 
 				// # Github features:
@@ -110,8 +83,7 @@
 						"source.organizeImports": "always",
 						"source.fixAll": "explicit"
 					},
-					"editor.formatOnSave": true,
-					// "editor.defaultFormatter": "charliermarsh.ruff"
+					"editor.formatOnSave": true
 				},
 				"python.defaultInterpreterPath": "/usr/local/bin/python"
 			}
