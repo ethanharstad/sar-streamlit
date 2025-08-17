@@ -54,7 +54,7 @@
 		// development environment.
 		// This is required if you're using static AWS IAM Keys.
 		// It's useful if you're using AWS SSO, and want to share your AWS config between all of your environments.
-		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws/,target=/home/vscode/.aws/,type=bind,consistency=cached"
+		// "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws/,target=/home/vscode/.aws/,type=bind,consistency=cached"
 	],
 
 	// # The opinionated settings for the development environment.
@@ -111,7 +111,7 @@
 						"source.fixAll": "explicit"
 					},
 					"editor.formatOnSave": true,
-					"editor.defaultFormatter": "charliermarsh.ruff"
+					// "editor.defaultFormatter": "charliermarsh.ruff"
 				},
 				"python.defaultInterpreterPath": "/usr/local/bin/python"
 			}
