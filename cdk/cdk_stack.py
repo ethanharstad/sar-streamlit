@@ -9,6 +9,7 @@ from aws_cdk import (
     aws_cloudfront as cloudfront,
     aws_cloudfront_origins as origins,
     aws_elasticloadbalancingv2 as elbv2,
+    aws_s3 as s3,
     SecretValue,
     CfnOutput,
 )
@@ -143,6 +144,11 @@ class CdkStack(Stack):
         # Grant access to read the secret in Secrets Manager
         secret.grant_read(task_role)
 
+        # Knowledge Base Setup
+        # S3 Bucket
+        bucket = s3.Bucket(self, f"{prefix}-KB-Bucket", enforce_ssl=True, minimum_tls_version=1.2)
+        bucket.grant_read_write(task_role)
+
         # Add ALB as CloudFront Origin
         origin = origins.LoadBalancerV2Origin(
             alb,
@@ -199,3 +205,4 @@ class CdkStack(Stack):
         # Output Cognito pool id
         CfnOutput(self, "CognitoPoolId",
                   value=user_pool.user_pool_id)
+        CfnOutput(self, "BucketName", value=bucket.bucket_name)

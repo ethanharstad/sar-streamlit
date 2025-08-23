@@ -19,3 +19,5 @@ class Config:
     # If Bedrock is not activated in us-east-1 in your account, set this value
     # accordingly
     BEDROCK_REGION = "us-east-1"
+
+    BUCKET_NAME = "streamlit-streamlitkbbucket4e5f67f6-zscxgb6ralu3"
